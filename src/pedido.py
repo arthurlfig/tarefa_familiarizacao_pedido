@@ -14,7 +14,7 @@ def calcular_total_pedido(subtotal, distancia_km, cliente_vip=False):
     if subtotal_com_desconto >= 100:
         frete = 0
     else:
-        frete = 8 + distancia_km
+        frete = 8 + 1.5 * distancia_km
 
-    total = subtotal + frete
-    return total
+    total = subtotal_com_desconto + frete
+    return round(float(total), 2)
